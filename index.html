@@ -417,6 +417,19 @@ body:after{opacity:.1}
 .mcol img{max-width:none;margin:0 0 14px}
 .qcol{padding-top:4px}.qcol .qrm img{width:170px;height:170px}
 @media(max-width:620px){.mgrid{grid-template-columns:1fr}.qcol{display:flex;justify-content:center}}
+
+/* ===== v17: Android/Chrome mobile fixes ===== */
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+.hero{position:relative;overflow:hidden}
+/* dropdown options readable on Android/Samsung/Chrome native pickers */
+select{color-scheme:light dark}
+select option,select optgroup{color:#111 !important;background:#fff !important}
+select option:checked{color:#fff !important;background:#b0001a !important}
+#hud *{white-space:nowrap}
+@media(max-width:520px){#hud{padding-left:16px;padding-right:16px;font-size:11px}#hud .lbl{letter-spacing:.18em}#hid{display:none}#hud button{padding:6px 10px;letter-spacing:.1em}}
+/* comfortable tap targets + no iOS/Android zoom-on-focus */
+@media(max-width:760px){input:not([type=checkbox]),select,textarea{font-size:16px}#att button{min-height:48px}}
 </style></head>
 <body class="lock">
 <div class="grid-bg"></div>
